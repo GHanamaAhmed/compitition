@@ -29,7 +29,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { Prisma, Schedule } from "@prisma/client";
+import { Schedule } from "@prisma/client";
 
 type ScheduleProps = {
   data: {
