@@ -156,7 +156,7 @@ export default function Page() {
                   name="Special_Events"
                   value={formData.Weather}
                   onValueChange={(value) =>
-                    setFormData((prev) => ({ ...prev, Classes: value }))
+                    setFormData((prev) => ({ ...prev, Special_Events: value }))
                   }
                 >
                   <SelectTrigger>

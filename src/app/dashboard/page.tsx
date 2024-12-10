@@ -72,7 +72,7 @@ export default async function Page() {
   } catch (error) {
     dataFromDb = [];
   }
-
+3
   return (
     <div className="flex flex-1 flex-col gap-4 p-4">
       <div className="mx-auto h-24 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
