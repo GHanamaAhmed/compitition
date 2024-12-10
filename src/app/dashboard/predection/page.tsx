@@ -94,7 +94,7 @@ export default function Page() {
                   id="day"
                   name="Day"
                   value={formData.Day}
-                  onValueChange={(value) =>
+                  onValueChange={(value :any) =>
                     setFormData((prev) => ({ ...prev, Day: value }))
                   }
                 >
@@ -117,7 +117,7 @@ export default function Page() {
                 <Select
                   name="Weather"
                   value={formData.Weather}
-                  onValueChange={(value) =>
+                  onValueChange={(value:any) =>
                     setFormData((prev) => ({ ...prev, Weather: value }))
                   }
                 >
@@ -136,7 +136,7 @@ export default function Page() {
                 <Select
                   name="Classes"
                   value={formData.Weather}
-                  onValueChange={(value) =>
+                  onValueChange={(value:any ) =>
                     setFormData((prev) => ({ ...prev, Classes: value }))
                   }
                 >
@@ -155,7 +155,7 @@ export default function Page() {
                 <Select
                   name="Special_Events"
                   value={formData.Weather}
-                  onValueChange={(value) =>
+                  onValueChange={(value : any) =>
                     setFormData((prev) => ({ ...prev, Classes: value }))
                   }
                 >
