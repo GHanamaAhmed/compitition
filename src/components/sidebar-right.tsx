@@ -55,13 +55,6 @@ export function SidebarRight({
       <SidebarHeader className="h-16 border-b border-sidebar-border">
         <NavUser />
       </SidebarHeader>
-      {pathname == "/dashboard/predection" && (
-        <SidebarContent>
-          <DatePicker />
-          <SidebarSeparator className="mx-0" />
-          <Calendars calendars={data.calendars} />
-        </SidebarContent>
-      )}
     </Sidebar>
   );
 }

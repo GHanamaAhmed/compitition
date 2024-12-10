@@ -66,7 +66,12 @@ export default async function Page() {
   // await db.schedule.createMany({
   //   data: data,
   // });
-  const dataFromDb = (await db.schedule.findMany()).reverse();
+  let dataFromDb: Schedule[] = [];
+  try {
+    dataFromDb = (await db.schedule.findMany()).reverse();
+  } catch (error) {
+    dataFromDb = [];
+  }
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4">
