@@ -62,7 +62,7 @@ export default function Page() {
 				body: JSON.stringify({
 					day: formData.Day,
 					weather: formData.Weather,
-					classes: Number(formData.Classes == 'On'? 1: 0),
+					classes: Number(formData.Classes == 'n'? 1: 0),
 					special_events: formData.Special_Events,
 					student_count: Number(formData.Attendance_Rate),
 				}),
