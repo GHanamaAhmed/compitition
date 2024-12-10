@@ -5,6 +5,7 @@ datasource db {
 
 generator client {
     provider = "prisma-client-js"
+    output   = "./generated/client"
 }
 
 model User {
@@ -24,4 +25,3 @@ model Schedule {
     student_count  Int
     studentActuly  Int
 }
-
