@@ -16,11 +16,10 @@ model User {
 
 model Schedule {
     id             String @id @default(auto()) @map("_id") @db.ObjectId
-    time           Int
-    day            Int
+    day            String
     weather        String
     classes        Int
     special_events String
-    student_count  Int
+    student_count  Int?
     studentActuly  Int
 }
