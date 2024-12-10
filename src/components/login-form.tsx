@@ -20,6 +20,7 @@ export function LoginForm() {
     try {
       await signIn?.authenticateWithRedirect({
         strategy: "oauth_google",
+        redirectUrl: "/dashboard",
       } as any);
     } catch (error) {
       console.error("Error signing in with Google:", error);
