@@ -38,7 +38,7 @@ export default function Page() {
   });
   const [modalOpen, setModalOpen] = useState(false);
   const [prediction, setPrediction] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -48,6 +48,7 @@ export default function Page() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:5000/predict", {
@@ -61,6 +62,7 @@ export default function Page() {
       console.log("Success:", data);
       setPrediction(JSON.stringify(data, null, 2));
       setModalOpen(true);
+      setLoading(false);
       await fetch("/api/prediction", {
         method: "POST",
         headers: {
@@ -91,7 +93,6 @@ export default function Page() {
               <div>
                 <Label htmlFor="day">Day:</Label>
                 <Select
-                  id="day"
                   name="Day"
                   value={formData.Day}
                   onValueChange={(value :any) =>
@@ -155,8 +156,8 @@ export default function Page() {
                 <Select
                   name="Special_Events"
                   value={formData.Weather}
-                  onValueChange={(value : any) =>
-                    setFormData((prev) => ({ ...prev, Classes: value }))
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({ ...prev, Special_Events: value }))
                   }
                 >
                   <SelectTrigger>
@@ -192,7 +193,7 @@ export default function Page() {
                 />
               </div>
             </div>
-            <Button type="submit" className="mt-4">
+            <Button disabled={loading == true} type="submit" className="mt-4">
               Submit
             </Button>
           </form>

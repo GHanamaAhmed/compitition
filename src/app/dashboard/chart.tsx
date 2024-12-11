@@ -111,7 +111,7 @@ export function BarComponent({ data }: ScheduleProps) {
 
 export function ChartComponent({ data }: { data: Schedule[] }) {
   const chartData = data.map((schedule) => ({
-    time: schedule.time,
+    time: schedule.day,
     student_count: schedule.student_count,
   }));
 
@@ -193,7 +193,7 @@ export function TableComponent({ data }: { data: Schedule[] }) {
       <TableBody>
         {data.map((schedule) => (
           <TableRow key={schedule.id}>
-            <TableCell>{schedule.time}</TableCell>
+            <TableCell>{schedule.day}</TableCell>
             <TableCell>{schedule.day}</TableCell>
             <TableCell>{schedule.weather}</TableCell>
             <TableCell>{schedule.classes}</TableCell>
